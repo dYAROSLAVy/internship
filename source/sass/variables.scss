@@ -1,0 +1,39 @@
+// Colors
+// ---------------------------------
+
+// Project palette
+$color-default-white: #ffffff;
+$color-alabaster: #f0efe9;
+$color-cerulean-blue: #316dc2;
+$color-charcoal: #484848;
+
+// $color-nobel: #999999;
+// $color-torch-red: #ff121f;
+
+// Gradient
+
+$black-to-right: linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+// ---------------------------------
+
+$fz-default: 16px;
+$ff-manr: "Manrope", "Arial", sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default: ease;
+$trans-default: 0.3s $tf-default;
+
+// Viewports
+// ---------------------------------
+
+$vp-768: 768px;
+$vp-1440: 1440px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
