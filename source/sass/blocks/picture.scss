@@ -1,0 +1,17 @@
+.picture {
+  display: flex;
+
+  &--decor {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+.picture picture,
+.picture img,
+.picture iframe {
+  display: flex;
+  width: 100%;
+}

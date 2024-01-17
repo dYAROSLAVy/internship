@@ -1,4 +1,24 @@
 // Vendor
 // ---------------------------------
-
 @import "vendor/normalize";
+@import "swiper/css/bundle";
+
+
+// Global
+// ---------------------------------
+@import "variables";
+@import "mixins";
+@import "global/fonts";
+@import "global/reboot";
+@import "global/utils";
+@import "global/container";
+
+// Blocks
+// ---------------------------------
+@import "blocks/btn";
+@import "blocks/picture";
+@import "blocks/header";
+@import "blocks/logo";
+@import "blocks/nav";
+@import "blocks/hero";
+@import "blocks/hero-card";

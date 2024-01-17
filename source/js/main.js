@@ -1,5 +1,12 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
+import {Form} from './vendor/form-validate/form';
+import {initSliders} from './modules/sliders/init-sliders';
 
+window.addEventListener('DOMContentLoaded', () => {
+  initSliders();
+
+  window.addEventListener('load', () => {
+    const form = new Form();
+    window.form = form;
+    form.init();
+  });
+});

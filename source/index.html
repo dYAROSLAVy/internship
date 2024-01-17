@@ -5,21 +5,283 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Стажировка главная страница, совместный проект правительств и волонтёрских бригад.">
   <title>Internship programs</title>
   <link rel="stylesheet" href="sass/style.scss">
+  <link rel="preload" href="fonts/manrope-400.woff2" as="font" crossorigin="anonymous">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
 </head>
 
 <body>
-  <div data-test="slider">slider</div>
-  <div data-test="about">about</div>
-  <div data-test="programs">programs</div>
-  <div data-test="grant">grant</div>
-  <div data-test="news">news</div>
-  <div data-test="FAQ">FAQ</div>
-  <div data-test="reviews">reviews</div>
-  <div data-test="contacts">contacts</div>
-  <div data-test="form">form</div>
-  <div data-test="footer">footer</div>
+  <div class="wrapper">
+    <main>
+      <h1 class="visually-hidden">Проект Стажировка.</h1>
+      <div data-test="slider">
+        <div class="container container--relative">
+          <header class="header">
+            <div class="header__inner">
+              <span class="header__logo logo">
+                <img src="img/svg/logo.svg" alt="Логотип сайта." width="52" height="52">
+              </span>
+              <nav class="nav">
+                <button class="nav__btn btn" type="button">
+                  <span class="btn__text">МЕНЮ</span>
+                  <span class="nav__toggle">
+                    <span class="nav__toggle-decor"></span>
+                    <span class="nav__toggle-decor"></span>
+                    <span class="nav__toggle-decor"></span>
+                  </span>
+                </button>
+              </nav>
+            </div>
+          </header>
+        </div>
+        <section class="hero">
+          <div class="hero__slider swiper" data-hero-slider="0">
+            <div class="swiper-wrapper">
+              <div class="hero-card swiper-slide">
+                <div class="hero-card__decor picture picture--decor">
+                  <picture>
+                    <source type="image/webp" media="(max-width: 767px)"
+                      srcset="img/hero/hero-1-mobile.webp, img/hero/hero-1-mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 767px)"
+                      srcset="img/hero/hero-1-mobile.jpg, img/hero/hero-1-mobile@2x.jpg 2x">
+                    <source type="image/webp" media="(max-width: 1439px)"
+                      srcset="img/hero/hero-1-tablet.webp, img/hero/hero-1-tablet@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 1439px)"
+                      srcset="img/hero/hero-1-tablet.jpg, img/hero/hero-1-tablet@2x.jpg 2x">
+                    <source type="image/webp" srcset="img/hero/hero-1.webp, img/hero/hero-1@2x.webp 2x">
+                    <img src="img/hero/hero-1.jpg" srcset="img/hero/hero-1@2x.jpg" width="1440" height="800" alt="">
+                  </picture>
+                </div>
+                <div class="container">
+                  <div class="hero-card__pagination-container">
+                    <div class="swiper-pagination" data-hero-slider-pagination="0"></div>
+                    <span class="hero-card__pagination-decor">
+                      <svg width="20" height="20">
+                        <use href="__spritemap#sprite-angle-top"></use>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hero-card__inner">
+                    <div class="hero-card__top-text-wrapper">
+                      <h2>Глобальный профессиональный опыт обучения за&nbsp;рубежом</h2>
+                    </div>
+                    <div class="hero-card__bottom-text-wrapper">
+                      <div class="hero-card__bottom-inner">
+                        <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах, ощущая
+                          настоящий студенческий стиль жизни!</p>
+                        <div class="hero-card__btn-wrapper">
+                          <a class="btn" href="#">
+                            <span class="btn__text">ПОДРОБНЕЕ</span>
+                            <span class="btn__decor">
+                              <svg width="10" height="10">
+                                <use href="__spritemap#sprite-arrow"></use>
+                              </svg>
+                            </span>
+                          </a>
+                          <span class="hero-card__text-wrapper-decor hero-card__text-wrapper-decor--primary">
+                            <svg width="26" height="26">
+                              <use href="__spritemap#sprite-angle-bottom"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="hero-card__text-wrapper-decor">
+                        <svg width="26" height="26">
+                          <use href="__spritemap#sprite-angle-bottom"></use>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-card swiper-slide">
+                <div class="hero-card__decor picture picture--decor">
+                  <picture>
+                    <source type="image/webp" media="(max-width: 767px)"
+                      srcset="img/hero/hero-2-mobile.webp, img/hero/hero-2-mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 767px)"
+                      srcset="img/hero/hero-2-mobile.jpg, img/hero/hero-2-mobile@2x.jpg 2x">
+                    <source type="image/webp" media="(max-width: 1439px)"
+                      srcset="img/hero/hero-2-tablet.webp, img/hero/hero-2-tablet@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 1439px)"
+                      srcset="img/hero/hero-2-tablet.jpg, img/hero/hero-2-tablet@2x.jpg 2x">
+                    <source type="image/webp" srcset="img/hero/hero-2.webp, img/hero/hero-2@2x.webp 2x">
+                    <img src="img/hero/hero-2.jpg" srcset="img/hero/hero-2@2x.jpg" width="1440" height="800" alt="">
+                  </picture>
+                </div>
+                <div class="container">
+                  <div class="hero-card__pagination-container">
+                    <div class="swiper-pagination" data-hero-slider-pagination="0"></div>
+                    <span class="hero-card__pagination-decor">
+                      <svg width="20" height="20">
+                        <use href="__spritemap#sprite-angle-top"></use>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hero-card__pagination-container">
+                    <div class="swiper-pagination" data-hero-slider-pagination="0"></div>
+                    <span class="hero-card__pagination-decor">
+                      <svg width="20" height="20">
+                        <use href="__spritemap#sprite-angle-top"></use>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hero-card__inner">
+                    <div class="hero-card__top-text-wrapper">
+                      <h2>Волонтёрские программы – внесите свой вклад в общество</h2>
+                    </div>
+                    <div class="hero-card__bottom-text-wrapper">
+                      <div class="hero-card__bottom-inner">
+                        <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и
+                          другое.</p>
+                        <div class="hero-card__btn-wrapper">
+                          <a class="btn" href="#">
+                            <span class="btn__text">ПОДРОБНЕЕ</span>
+                            <span class="btn__decor">
+                              <svg width="10" height="10">
+                                <use href="__spritemap#sprite-arrow"></use>
+                              </svg>
+                            </span>
+                          </a>
+                          <span class="hero-card__text-wrapper-decor hero-card__text-wrapper-decor--primary">
+                            <svg width="26" height="26">
+                              <use href="__spritemap#sprite-angle-bottom"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="hero-card__text-wrapper-decor">
+                        <svg width="26" height="26">
+                          <use href="__spritemap#sprite-angle-bottom"></use>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-card swiper-slide">
+                <div class="hero-card__decor picture picture--decor">
+                  <picture>
+                    <source type="image/webp" media="(max-width: 767px)"
+                      srcset="img/hero/hero-3-mobile.webp, img/hero/hero-3-mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 767px)"
+                      srcset="img/hero/hero-3-mobile.jpg, img/hero/hero-3-mobile@2x.jpg 2x">
+                    <source type="image/webp" media="(max-width: 1439px)"
+                      srcset="img/hero/hero-3-tablet.webp, img/hero/hero-3-tablet@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 1439px)"
+                      srcset="img/hero/hero-3-tablet.jpg, img/hero/hero-3-tablet@2x.jpg 2x">
+                    <source type="image/webp" srcset="img/hero/hero-3.webp, img/hero/hero-3@2x.webp 2x">
+                    <img src="img/hero/hero-3.jpg" srcset="img/hero/hero-3@2x.jpg" width="1440" height="800" alt="">
+                  </picture>
+                </div>
+                <div class="container">
+                  <div class="hero-card__pagination-container">
+                    <div class="swiper-pagination" data-hero-slider-pagination="0"></div>
+                    <span class="hero-card__pagination-decor">
+                      <svg width="20" height="20">
+                        <use href="__spritemap#sprite-angle-top"></use>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hero-card__pagination-container">
+                    <div class="swiper-pagination" data-hero-slider-pagination="0"></div>
+                    <span class="hero-card__pagination-decor">
+                      <svg width="20" height="20">
+                        <use href="__spritemap#sprite-angle-top"></use>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="hero-card__inner">
+                    <div class="hero-card__top-text-wrapper">
+                      <h2>Программы стажировок в крупнейших компаниях мира</h2>
+                    </div>
+                    <div class="hero-card__bottom-text-wrapper">
+                      <div class="hero-card__bottom-inner">
+                        <p>Получите незаменимый опыт работы в&nbsp;ведущих мировых компаниях и&nbsp;государственных
+                          организациях.
+                        </p>
+                        <div class="hero-card__btn-wrapper">
+                          <a class="btn" href="#">
+                            <span class="btn__text">ПОДРОБНЕЕ</span>
+                            <span class="btn__decor">
+                              <svg width="10" height="10">
+                                <use href="__spritemap#sprite-arrow"></use>
+                              </svg>
+                            </span>
+                          </a>
+                          <span class="hero-card__text-wrapper-decor hero-card__text-wrapper-decor--primary">
+                            <svg width="26" height="26">
+                              <use href="__spritemap#sprite-angle-bottom"></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="hero-card__text-wrapper-decor">
+                        <svg width="26" height="26">
+                          <use href="__spritemap#sprite-angle-bottom"></use>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  </div>
+  <!-- <div data-test="about">
+        <div class="container">
+          about
+        </div>
+      </div>
+      <div data-test="programs">
+        <div class="container">
+          programs
+        </div>
+      </div>
+      <div data-test="grant">
+        <div class="container">
+          grant
+        </div>
+      </div>
+      <div data-test="news">
+        <div class="container">
+          news
+        </div>
+      </div>
+      <div data-test="FAQ">
+        <div class="container">
+          FAQ
+        </div>
+      </div>
+      <div data-test="reviews">
+        <div class="container">
+          reviews
+        </div>
+      </div>
+      <div data-test="contacts">
+        <div class="container">
+          contacts
+        </div>
+      </div>
+      <div data-test="form">
+        <div class="container">
+          form
+        </div>
+      </div>
+      <div data-test="footer">
+        <div class="container">
+          footer
+        </div>
+      </div> -->
+  </main>
+  <footer></footer>
+  </div>
+
   <script type="module" src="js/main.js"></script>
 </body>
 

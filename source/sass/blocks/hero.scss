@@ -1,0 +1,70 @@
+.hero__slider .hero-card {
+  display: flex;
+}
+
+.hero__slider .swiper-pagination-horizontal.swiper-pagination {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 14px;
+
+  @include vp-767 {
+    padding: 0 10px;
+  }
+}
+
+.hero__slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 38px;
+  margin: 0 6px;
+  padding: 10px 0;
+  background: transparent;
+  opacity: 1;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px solid $color-cerulean-blue;
+    border-radius: 50%;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+  }
+
+  @include vp-767 {
+    width: 8px;
+    height: 28px;
+
+    &::after {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::before {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+.hero__slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background-color: transparent;
+
+  &::before {
+    background-color: $color-cerulean-blue;
+  }
+}
