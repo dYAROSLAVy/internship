@@ -7,10 +7,10 @@ const heroSlider = () => {
   return new Swiper(swiperWrapper, {
     loop: true,
     autoHeight: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: true,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: true,
+    // },
     pagination: {
       el: pagination,
       clickable: true,
