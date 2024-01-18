@@ -9,6 +9,17 @@
   }
 }
 
+.picture--overlay {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $color-cerulean-blue;
+    opacity: 0.2;
+  }
+}
+
 .picture picture,
 .picture img,
 .picture iframe {

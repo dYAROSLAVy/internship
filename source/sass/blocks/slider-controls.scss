@@ -1,0 +1,23 @@
+.slider-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.slider-controls__btns-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.slider-controls .slider-controls__btn {
+  align-items: center;
+  min-width: auto;
+  min-height: auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid transparent;
+}
