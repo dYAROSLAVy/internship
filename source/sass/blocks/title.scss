@@ -6,6 +6,10 @@
   line-height: 50px;
   color: $color-cerulean-blue;
 
+  &--primary {
+    color: $color-default-white;
+  }
+
   @include vp-1439 {
     padding-top: 0;
     font-size: 34px;

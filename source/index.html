@@ -233,7 +233,7 @@
         </section>
       </div>
       <div data-test="about">
-        <div class="about">
+        <section class="about">
           <div class="container">
             <div class="about__top-wrapper">
               <div class="about__top-left-column">
@@ -259,57 +259,65 @@
             <ul class="about__list">
               <li>
                 <div class="about-card">
-                  <span class="about-card__decor">
-                    <svg width="22" height="22">
-                      <use href="__spritemap#sprite-star"></use>
-                    </svg>
-                  </span>
-                  <h4>БОЛЕЕ 250 <br>ПРОГРАММ</h4>
-                  <p>учебных и&nbsp;рабочих, разной длительностью от&nbsp;3&nbsp;месяцев до&nbsp;1&nbsp;года</p>
+                  <div class="about-card__inner">
+                    <span class="about-card__decor">
+                      <svg width="22" height="22">
+                        <use href="__spritemap#sprite-star"></use>
+                      </svg>
+                    </span>
+                    <h4>БОЛЕЕ 250 <br>ПРОГРАММ</h4>
+                    <p>учебных и&nbsp;рабочих, разной длительностью от&nbsp;3&nbsp;месяцев до&nbsp;1&nbsp;года</p>
+                  </div>
                 </div>
               </li>
               <li>
                 <div class="about-card">
-                  <span class="about-card__decor">
-                    <svg width="22" height="22">
-                      <use href="__spritemap#sprite-star"></use>
-                    </svg>
-                  </span>
-                  <h4>БОЛЕЕ 3000 <br>УЧАСТНИКОВ</h4>
-                  <p>уже успешно прошли программу
-                    от&nbsp;&laquo;Стажировка&raquo; и&nbsp;остались в&nbsp;разных
-                    странах</p>
+                  <div class="about-card__inner">
+                    <span class="about-card__decor">
+                      <svg width="22" height="22">
+                        <use href="__spritemap#sprite-star"></use>
+                      </svg>
+                    </span>
+                    <h4>БОЛЕЕ 3000 <br>УЧАСТНИКОВ</h4>
+                    <p>уже успешно прошли программу
+                      от&nbsp;&laquo;Стажировка&raquo; и&nbsp;остались в&nbsp;разных
+                      странах</p>
+                  </div>
                 </div>
               </li>
               <li>
                 <div class="about-card">
-                  <span class="about-card__decor">
-                    <svg width="22" height="22">
-                      <use href="__spritemap#sprite-star"></use>
-                    </svg>
-                  </span>
-                  <h4>ОТ 4 200 $ <br>ДО 8 400 $</h4>
-                  <p>грант всем участникам для&nbsp;комфортного прохождения программы</p>
+                  <div class="about-card__inner">
+                    <span class="about-card__decor">
+                      <svg width="22" height="22">
+                        <use href="__spritemap#sprite-star"></use>
+                      </svg>
+                    </span>
+                    <h4>ОТ 4 200 $ <br>ДО 8 400 $</h4>
+                    <p>грант всем участникам для&nbsp;комфортного прохождения программы</p>
+                  </div>
                 </div>
               </li>
               <li>
                 <div class="about-card">
-                  <span class="about-card__decor">
-                    <svg width="22" height="22">
-                      <use href="__spritemap#sprite-star"></use>
-                    </svg>
-                  </span>
-                  <h4>УЧАСТНИКИ <br>ИЗ 60 СТРАН</h4>
-                  <p>студенты со&nbsp;всего мира приезжают на&nbsp;программу
-                    &laquo;Стажировка&raquo;</p>
+                  <div class="about-card__inner">
+                    <span class="about-card__decor">
+                      <svg width="22" height="22">
+                        <use href="__spritemap#sprite-star"></use>
+                      </svg>
+                    </span>
+                    <h4>УЧАСТНИКИ <br>ИЗ 60 СТРАН</h4>
+                    <p>студенты со&nbsp;всего мира приезжают на&nbsp;программу
+                      &laquo;Стажировка&raquo;</p>
+                  </div>
                 </div>
               </li>
             </ul>
           </div>
-        </div>
+        </section>
       </div>
-      <div data-test="grant">
-        <div class="programs">
+      <div data-test="programs">
+        <section class="programs">
           <div class="container">
             <div class="programs__title-wrapper">
               <h2 class="title">Программы</h2>
@@ -562,18 +570,76 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
+      </div>
+      <div data-test="grant">
+        <section class="grants">
+          <div class="container">
+            <h2 class="visually-hidden">О грантах</h2>
+            <div class="grants__grid">
+              <div class="grants__left-column">
+                <h3 class="title title--primary">Как поехать</h3>
+                <p>Свяжитесь с&nbsp;координатором, чтобы узнать полную информацию. Вы&nbsp;получите актуальные сведения
+                  о&nbsp;доступных программах и&nbsp;городах, в&nbsp;которых можете пройти программу.</p>
+                <div class="grants__left-column-picture picture">
+                  <picture>
+                    <!-- <source type="image/webp" media="(max-width: 767px)"
+                      srcset="img/programs/program-1-mobile.webp, img/programs/program-1-mobile@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 767px)"
+                      srcset="img/programs/program-1-mobile.jpg, img/programs/program-1-mobile@2x.jpg 2x">
+                    <source type="image/webp" media="(max-width: 1439px)"
+                      srcset="img/programs/program-1-tablet.webp, img/programs/program-1-tablet@2x.webp 2x">
+                    <source type="image/jpg" media="(max-width: 1439px)"
+                      srcset="img/programs/program-1-tablet.jpg, img/programs/program-1-tablet@2x.jpg 2x"> -->
+                    <source type="image/webp" srcset="img/grants.webp, img/grants@2x.webp 2x">
+                    <img src="img/grants.jpg" srcset="img/grants@2x.jpg" width="1440"
+                      height="800" alt="">
+                  </picture>
+                </div>
+              </div>
+              <div class="grants__right-column">
+                <h4 class="grants__list-title">Чтобы получить грант на&nbsp;обучение, вам нужно:</h4>
+                <ul class="grants__info-list">
+                  <li>
+                    <div class="numbered-item">
+                      <div class="numbered-item__inner">
+                        <p>Быть в&nbsp;возрасте от&nbsp;16&nbsp;до&nbsp;30&nbsp;лет</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="numbered-item">
+                      <div class="numbered-item__inner">
+                        <p>Иметь оконченное среднее образование</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="numbered-item">
+                      <div class="numbered-item__inner">
+                        <p>Иметь документально подтверждённое&nbsp;<br>отсутствие судимости&nbsp;и&nbsp;пройти&nbsp;консульскую проверку</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="numbered-item">
+                      <div class="numbered-item__inner">
+                        <p>За&nbsp;последние 2&nbsp;года быть не&nbsp;больше 3х&nbsp;месяцев подряд непрерывно в&nbsp;одной стране</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
     <footer></footer>
   </div>
-  <!-- <div data-test="programs">
-    <div class="container">
-      programs
-    </div>
-  </div>
 
-  <div data-test="news">
+
+  <!-- <div data-test="news">
     <div class="container">
       news
     </div>
@@ -602,7 +668,7 @@
     <div class="container">
       footer
     </div>
-  </div> -->
+  </div>  -->
 
 
   <script type="module" src="js/main.js"></script>
