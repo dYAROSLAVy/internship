@@ -10,6 +10,10 @@
   flex-wrap: wrap;
   gap: 10px;
   align-items: flex-end;
+
+  @include vp-767 {
+    gap: 8px;
+  }
 }
 
 .slider-controls .slider-controls__btn {

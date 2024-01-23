@@ -1,6 +1,7 @@
 // Vendor
 // ---------------------------------
 @import "vendor/normalize";
+@import "vendor/data-accordion";
 @import "swiper/css/bundle";
 
 
@@ -26,8 +27,11 @@
 @import "blocks/about";
 @import "blocks/about-card";
 @import "blocks/programs";
-@import "blocks/program-card";
+@import "blocks/slider-card";
 @import "blocks/slider-controls";
 @import "blocks/styled-link";
 @import "blocks/grants";
 @import "blocks/numbered-item";
+@import "blocks/news";
+@import "blocks/faq";
+@import "blocks/accordion";

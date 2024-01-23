@@ -48,7 +48,7 @@
   margin: 0;
 
   &:not(:last-child) {
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   @include vp-1439 {
