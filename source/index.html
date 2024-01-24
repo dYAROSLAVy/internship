@@ -604,7 +604,7 @@
       <div data-test="news">
         <section class="news">
           <div class="container">
-            <div class="news__inner">
+            <div class="news__inner section-inner">
               <h2 class="news__title title">Новости и материалы</h2>
               <div class="news__tabs">
                 <button class="news__tabs-btn is-active btn" type="button">ОБЩЕЕ</button>
@@ -781,7 +781,7 @@
       <div data-test="FAQ">
         <section class="faq">
           <div class="container">
-            <div class="faq__inner">
+            <div class="faq__inner section-inner">
               <h2 class="title">Вопросы и ответы</h2>
               <ul class="faq__accordion accordion" data-accordion="parent">
                 <li class="accordion__item" data-accordion="element">
@@ -865,7 +865,7 @@
       <div data-test="reviews">
         <section class="reviews">
           <div class="container">
-            <div class="reviews__inner">
+            <div class="reviews__inner section-inner">
               <h2 class="reviews__title title">Отзывы</h2>
               <div class="reviews__slider">
                 <div class="swiper" data-reviews-slider="0">
@@ -995,6 +995,46 @@
           </div>
         </section>
       </div>
+      <div data-test="contacts">
+        <section class="contacts">
+          <div class="container">
+            <div class="contact__inner section-inner">
+              <div class="contacts__info-wrapper">
+                <h2 class="title title--primary">Контакты</h2>
+                <div class="contacts__info">
+                  <p class="contacts__text-wrapper">
+                    <small class="contacts__info-tile">ЦЕНТРАЛЬНЫЙ ОФИС</small>
+                    <span class="contacts__info-text">г. Новосибирск, ул. Щетинкина 68, <br>культурный центр</span>
+                  </p>
+                  <p class="contacts__text-wrapper">
+                    <small class="contacts__info-tile">ТЕЛЕФОН</small>
+                    <a class="contacts__info-text" href="tel:+796387687676">+7 963 876 876 76</a>
+                  </p>
+                  <p class="contacts__text-wrapper">
+                    <small class="contacts__info-tile">EMAIL</small>
+                    <a class="contacts__info-text" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
+                  </p>
+                </div>
+              </div>
+              <span class="contacts__decor"></span>
+              <div class="contacts__map picture">
+                <picture>
+                  <source type="image/webp" media="(max-width: 767px)"
+                    srcset="img/map/map-mobile.webp, img/map/map-mobile@2x.webp 2x">
+                  <source type="image/jpg" media="(max-width: 767px)"
+                    srcset="img/map/map-mobile.jpg, img/map/map-mobile@2x.jpg 2x">
+                  <source type="image/webp" media="(max-width: 1439px)"
+                    srcset="img/map/map-tablet.webp, img/map/map-tablet@2x.webp 2x">
+                  <source type="image/jpg" media="(max-width: 1439px)"
+                    srcset="img/map/map-tablet.jpg, img/map/map-tablet@2x.jpg 2x">
+                  <source type="image/webp" srcset="img/map/map.webp, img/map/map@2x.webp 2x">
+                  <img src="img/map/map.jpg" srcset="img/map/map@2x.jpg" width="1440" height="800" alt="">
+                </picture>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer></footer>
   </div>
@@ -1002,11 +1042,7 @@
 
   <!--
   </div>
-  <div data-test="contacts">
-    <div class="container">
-      contacts
-    </div>
-  </div>
+
   <div data-test="form">
     <div class="container">
       form

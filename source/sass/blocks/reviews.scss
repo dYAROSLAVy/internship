@@ -3,10 +3,8 @@
 }
 
 .reviews__inner {
-  display: flex;
   position: relative;
-  flex-direction: column;
-  gap: 40px;
+  align-items: normal;
 
   @include vp-767 {
     gap: 35px;

@@ -1,8 +1,6 @@
 .faq__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 66px;
   align-items: center;
+  gap: 66px;
 
   @include vp-1439 {
     gap: 40px;

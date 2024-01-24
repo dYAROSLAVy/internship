@@ -1,9 +1,4 @@
 .news__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-
   @include vp-1439 {
     height: 940px;
   }
