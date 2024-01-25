@@ -38,6 +38,7 @@
           </header>
         </div>
         <section class="hero">
+          <h2 class="visually-hidden">Возможности проекта.</h2>
           <div class="hero__slider swiper" data-hero-slider="0">
             <div class="swiper-wrapper">
               <div class="hero-card swiper-slide">
@@ -66,7 +67,7 @@
                   </div>
                   <div class="hero-card__inner">
                     <div class="hero-card__top-text-wrapper">
-                      <h2>Глобальный профессиональный опыт обучения за&nbsp;рубежом</h2>
+                      <h3>Глобальный профессиональный опыт обучения за&nbsp;рубежом</h3>
                     </div>
                     <div class="hero-card__bottom-text-wrapper">
                       <div class="hero-card__bottom-inner">
@@ -131,7 +132,7 @@
                   </div>
                   <div class="hero-card__inner">
                     <div class="hero-card__top-text-wrapper">
-                      <h2>Волонтёрские программы – внесите свой вклад в общество</h2>
+                      <h3>Волонтёрские программы – внесите свой вклад в общество</h3>
                     </div>
                     <div class="hero-card__bottom-text-wrapper">
                       <div class="hero-card__bottom-inner">
@@ -196,7 +197,7 @@
                   </div>
                   <div class="hero-card__inner">
                     <div class="hero-card__top-text-wrapper">
-                      <h2>Программы стажировок в крупнейших компаниях мира</h2>
+                      <h3>Программы стажировок в крупнейших компаниях мира</h3>
                     </div>
                     <div class="hero-card__bottom-text-wrapper">
                       <div class="hero-card__bottom-inner">
@@ -256,6 +257,7 @@
                 </a>
               </div>
             </div>
+            <h3 class="visually-hidden">Наши преимущества</h3>
             <ul class="about__list">
               <li>
                 <div class="about-card">
@@ -278,7 +280,7 @@
                         <use href="__spritemap#sprite-star"></use>
                       </svg>
                     </span>
-                    <h4>БОЛЕЕ 3000 <br>УЧАСТНИКОВ</h4>
+                    <h4>БОЛЕЕ 3000&nbsp;<br>УЧАСТНИКОВ</h4>
                     <p>уже успешно прошли программу
                       от&nbsp;&laquo;Стажировка&raquo; и&nbsp;остались в&nbsp;разных
                       странах</p>
@@ -616,7 +618,7 @@
               <div class="news__slider">
                 <div class="swiper" data-news-slider="0">
                   <div class="swiper-wrapper">
-                    <div class="news__card slider-card swiper-slide">
+                    <div class="news__card news__card--primary slider-card swiper-slide">
                       <div class="slider-card__picture-decor picture picture--decor">
                         <picture>
                           <!-- <source type="image/webp" media="(max-width: 767px)"
@@ -1035,19 +1037,94 @@
           </div>
         </section>
       </div>
+      <div data-test="form">
+        <section class="contact-form">
+          <h2 class="visually-hidden">Форма для обратной связи.</h2>
+          <div class="container">
+            <div class="contact-form__inner">
+              <div class="contacts-form__picture picture picture--decor">
+                <picture>
+                  <!-- <source type="image/webp" media="(max-width: 767px)"
+                    srcset="img/map/map-mobile.webp, img/map/map-mobile@2x.webp 2x">
+                  <source type="image/jpg" media="(max-width: 767px)"
+                    srcset="img/map/map-mobile.jpg, img/map/map-mobile@2x.jpg 2x"> -->
+                  <source type="image/webp" media="(max-width: 1439px)"
+                    srcset="img/form/form-tablet.webp, img/form/form-tablet@2x.webp 2x">
+                  <source type="image/jpg" media="(max-width: 1439px)"
+                    srcset="img/form/form-tablet.jpg, img/form/form-tablet@2x.jpg 2x">
+                  <source type="image/webp" srcset="img/form/form.webp, img/form/form@2x.webp 2x">
+                  <img src="img/form/form.jpg" srcset="img/form/form@2x.jpg" width="1440" height="800" alt="">
+                </picture>
+              </div>
+              <div class="contact-form__form-container form">
+                <div class="form__text-wrapper">
+                  <h3 class="form__title">Напишите нам</h3>
+                  <p class="form__text">Оставьте ваши контакты, если у&nbsp;вас остались вопросы&nbsp;&mdash;
+                    <br>мы&nbsp;на&nbsp;них ответим!</p>
+                </div>
+                <div data-form-validate="data-form-validate" data-callback="base">
+                  <form action="https://echo.htmlacademy.ru/" method="post" id="rt">
+                    <div class="form__inputs-wrapper">
+                      <div class="form__input" data-validate-type="text" data-limitation="name"
+                        data-message-base="Поле обязательно к заполнению"
+                        data-message-extra="Проверьте корректность заполнения поля" data-required="data-required">
+                        <label for="name">Имя</label>
+                        <input type="text" required name="name" id="name">
+                      </div>
+                      <div class="form__input" data-validate-type="phone" data-required="data-required"
+                        data-message-base="Поле обязательно к заполнению"
+                        data-message-extra="Проверьте корректность заполнения поля">
+                        <label for="tel">Телефон</label>
+                        <input type="tel" required name="tel" id="tel">
+                      </div>
+                      <div class="form__input">
+                        <label for="message">Ваше сообщение</label>
+                        <textarea name="message" id="message"></textarea>
+                      </div>
+                      <div class="form__input form__select">
+                        <label for="city">Выберите город</label>
+                        <select class="select" name="city" id="city">
+                          <option value="none" label=" "></option>
+                          <option value="expensive">Санкт-Петербург</option>
+                          <option value="expensive">Москва</option>
+                          <option value="expensive">Казань</option>
+                          <option value="expensive">Владивосток</option>
+                        </select>
+                      </div>
+                      <div class="form__checkbox">
+                        <label>
+                          <input type="checkbox" required name="personal-data" id="personal-data">
+                          <span>
+                            <svg width="10" height="10">
+                              <use href="__spritemap#sprite-check"></use>
+                            </svg>
+                          </span>
+                          <span>Я согласен на обработку моих персональных данных</span>
+                        </label>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <button class="btn btn--primary" form="rt" type="submit">
+                  <span class="btn__text">ОТПРАВИТЬ</span>
+                  <span class="btn__decor">
+                    <svg width="10" height="10">
+                      <use href="__spritemap#sprite-arrow"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer></footer>
   </div>
 
 
   <!--
-  </div>
 
-  <div data-test="form">
-    <div class="container">
-      form
-    </div>
-  </div>
   <div data-test="footer">
     <div class="container">
       footer

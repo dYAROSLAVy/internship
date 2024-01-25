@@ -17,6 +17,12 @@
   border: 1px solid #316dc2;
   border-radius: 30px;
 
+  &--primary {
+    color: $color-default-white;
+    border-color: $color-default-white;
+  }
+
+
   @include vp-767 {
     gap: 20px;
     min-height: 42px;
@@ -25,6 +31,7 @@
     line-height: 12px;
     letter-spacing: 0.24px;
   }
+
 
   // &:disabled {
   //   background-color: $color-nobel;
@@ -49,6 +56,7 @@
 // }
 
 .btn__text {
+  width: 100%;
   padding-left: 1px;
 }
 
@@ -56,13 +64,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 46px;
   height: 46px;
   background-color: $color-cerulean-blue;
+  color: $color-default-white;
   border-radius: 50%;
 
   @include vp-767 {
     width: 34px;
     height: 34px;
   }
+}
+
+.btn--primary .btn__decor {
+  background-color: $color-default-white;
+  color: $color-cerulean-blue;
 }
