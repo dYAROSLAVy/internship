@@ -1,21 +1,24 @@
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
+import {Navigation, Scrollbar} from 'swiper/modules';
 
-const reviewsSlider = () => {
+const initReviewsSlider = () => {
   const swiperWrapper = document.querySelector('[data-reviews-slider]');
-  const pagination = document.querySelector('[data-reviews-slider-pagination]');
+  const scrollbar = document.querySelector('[data-reviews-slider-scrollbar]');
   const buttonPrev = document.querySelector('[data-reviews-slider-btn-prev]');
   const buttonNext = document.querySelector('[data-reviews-slider-btn-next]');
 
-  return new Swiper(swiperWrapper, {
+  const reviewsSlider = new Swiper(swiperWrapper, {
+    modules: [Navigation, Scrollbar],
     loop: false,
     autoHeight: true,
     navigation: {
       nextEl: buttonNext,
       prevEl: buttonPrev,
     },
-    pagination: {
-      el: pagination,
-      type: 'progressbar',
+    scrollbar: {
+      el: scrollbar,
+      draggable: true,
+      dragSize: 392,
     },
     breakpoints: {
       1440: {
@@ -27,6 +30,9 @@ const reviewsSlider = () => {
         slidesPerView: 'auto',
         spaceBetween: 30,
         allowTouchMove: true,
+        scrollbar: {
+          dragSize: 324,
+        },
       },
       320: {
         slidesPerView: 'auto',
@@ -35,6 +41,7 @@ const reviewsSlider = () => {
       },
     },
   });
+  return reviewsSlider;
 };
 
-export {reviewsSlider};
+export {initReviewsSlider};

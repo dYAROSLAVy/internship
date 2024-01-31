@@ -1,4 +1,5 @@
-.slider-card {
+.slider-card,
+.slider-card.swiper-slide {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -21,6 +22,7 @@
   position: relative;
   width: fit-content;
   min-width: 194px;
+  max-width: 230px;
   padding: 13px 12.5px 2px 18px;
   border-radius: 12px 12px 0 0;
   background-color: $color-default-white;
@@ -38,15 +40,17 @@
 
 .slider-card__text-decor {
   position: absolute;
-  top: 22px;
+  width: 18px;
+  height: 18px;
+  bottom: 1px;
   right: -18px;
+  color: $color-default-white;
+  pointer-events: none;
+  user-select: none;
 
-  @include vp-1439 {
-    top: 19px;
-  }
-
-  @include vp-767 {
-    top: 23px;
+  &--date {
+    top: -18px;
+    left: 0;
   }
 }
 
@@ -94,4 +98,19 @@
   @include vp-767 {
     width: 188px;
   }
+}
+
+.slider-card__date-wrapper {
+  position: relative;
+  width: fit-content;
+  padding: 1px 12.5px 0 0;
+  background-color: $color-alabaster;
+  border-radius: 0 12px 0 0;
+}
+
+.slider-card__date {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.12px;
+  color: $color-cerulean-blue;
 }

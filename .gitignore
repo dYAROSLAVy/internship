@@ -10,6 +10,8 @@ lerna-debug.log*
 node_modules
 dist
 backstop_data
+bitmaps_reference
+engine_scripts
 .cache
 *.local
 package-lock.json

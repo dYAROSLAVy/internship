@@ -23,6 +23,7 @@
   position: relative;
   width: fit-content;
   background-color: $color-default-white;
+  color: $color-default-white;
   border-radius: 20px 20px 0 0;
 
   @include vp-767 {

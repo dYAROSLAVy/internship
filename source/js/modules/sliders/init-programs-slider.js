@@ -1,21 +1,24 @@
-import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
+import {Navigation, Scrollbar} from 'swiper/modules';
 
-const programsSlider = () => {
+const initProgramsSlider = () => {
   const swiperWrapper = document.querySelector('[data-programs-slider]');
-  const pagination = document.querySelector('[data-programs-slider-pagination]');
+  const scrollbar = document.querySelector('[data-programs-slider-scrollbar]');
   const buttonPrev = document.querySelector('[data-programs-slider-btn-prev]');
   const buttonNext = document.querySelector('[data-programs-slider-btn-next]');
 
-  return new Swiper(swiperWrapper, {
+  const programsSlider = new Swiper(swiperWrapper, {
+    modules: [Navigation, Scrollbar],
     loop: false,
     autoHeight: true,
     navigation: {
       nextEl: buttonNext,
       prevEl: buttonPrev,
     },
-    pagination: {
-      el: pagination,
-      type: 'progressbar',
+    scrollbar: {
+      el: scrollbar,
+      draggable: true,
+      dragSize: 392,
     },
     breakpoints: {
       1440: {
@@ -24,9 +27,12 @@ const programsSlider = () => {
         allowTouchMove: false,
       },
       768: {
-        slidesPerView: 2,
+        slidesPerView: 'auto',
         spaceBetween: 30,
         allowTouchMove: false,
+        scrollbar: {
+          dragSize: 324,
+        },
       },
       320: {
         slidesPerView: 1,
@@ -34,6 +40,7 @@ const programsSlider = () => {
       },
     },
   });
+  return programsSlider;
 };
 
-export {programsSlider};
+export {initProgramsSlider};

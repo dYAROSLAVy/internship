@@ -2,8 +2,7 @@
 // ---------------------------------
 @import "vendor/normalize";
 @import "vendor/data-accordion";
-@import "swiper/css/bundle";
-
+@import "vendor/custom-select";
 
 // Global
 // ---------------------------------
@@ -21,6 +20,7 @@
 @import "blocks/title";
 @import "blocks/form";
 @import "blocks/section-inner";
+@import "blocks/socials";
 @import "blocks/header";
 @import "blocks/logo";
 @import "blocks/nav";
@@ -41,3 +41,4 @@
 @import "blocks/review-card";
 @import "blocks/contacts";
 @import "blocks/contact-form";
+@import "blocks/footer";

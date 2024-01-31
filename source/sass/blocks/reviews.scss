@@ -7,7 +7,7 @@
   align-items: normal;
 
   @include vp-767 {
-    gap: 35px;
+    gap: 32px;
   }
 }
 
@@ -22,8 +22,19 @@
     padding-left: 0;
 
     &:not(:last-child) {
-      margin: 0;
+      margin-bottom: 0;
     }
+  }
+
+  @include vp-767 {
+    margin-top: 2px;
+  }
+}
+
+.reviews__slider {
+  // Вынужден добавить - кривой скрин в тестах. Проходит только при высоте блока 490.5 и выше, а в макете 490.
+  @include vp-767 {
+    margin-top: 0.5px;
   }
 }
 
@@ -34,5 +45,14 @@
 
   @include vp-767 {
     overflow: hidden;
+  }
+}
+
+.reviews__slider-controls {
+  @include vp-767 {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    margin-top: 0;
   }
 }
