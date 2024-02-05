@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {Navigation, Scrollbar} from 'swiper/modules';
+import {Navigation, Scrollbar, A11y} from 'swiper/modules';
 
 const initProgramsSlider = () => {
   const swiperWrapper = document.querySelector('[data-programs-slider]');
@@ -8,7 +8,7 @@ const initProgramsSlider = () => {
   const buttonNext = document.querySelector('[data-programs-slider-btn-next]');
 
   const programsSlider = new Swiper(swiperWrapper, {
-    modules: [Navigation, Scrollbar],
+    modules: [Navigation, Scrollbar, A11y],
     loop: false,
     autoHeight: true,
     navigation: {
@@ -17,7 +17,6 @@ const initProgramsSlider = () => {
     },
     scrollbar: {
       el: scrollbar,
-      draggable: true,
       dragSize: 392,
     },
     breakpoints: {
@@ -40,6 +39,7 @@ const initProgramsSlider = () => {
       },
     },
   });
+
   return programsSlider;
 };
 

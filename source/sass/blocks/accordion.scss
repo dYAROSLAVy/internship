@@ -42,6 +42,19 @@
     padding: 19px 14px;
     border-radius: 14px;
   }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-default-white;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    background-color: $color-mischka;
+    pointer-events: none;
+    user-select: none;
+  }
 }
 
 .accordion__item span:first-of-type {
@@ -61,6 +74,15 @@
   }
 }
 
+.accordion__btn:active span:first-of-type {
+  color: $color-endeavour;
+}
+
+.accordion__btn:disabled span:first-of-type {
+  color: $color-default-white;
+  opacity: 0.6;
+}
+
 .accordion__btn-decor {
   position: absolute;
   right: 39px;
@@ -72,6 +94,7 @@
   height: 40px;
   border-radius: 50%;
   background-color: $color-cerulean-blue;
+  border: 1px solid $color-cerulean-blue;
 
   &::after,
   &::before {
@@ -99,6 +122,36 @@
   }
 }
 
+
+.accordion__btn:hover .accordion__btn-decor,
+.accordion__btn:focus .accordion__btn-decor {
+  background-color: $color-default-white;
+  border-color: $color-cerulean-blue;
+
+  &::after,
+  &::before {
+    background-color: $color-cerulean-blue;
+  }
+}
+
+.accordion__btn:active .accordion__btn-decor {
+  background-color: $color-endeavour;
+
+  &::after,
+  &::before {
+    background-color: $color-default-white;
+  }
+}
+
+.accordion__btn:disabled .accordion__btn-decor {
+  background-color: $color-mischka;
+  border-color: $color-mischka;
+
+  &::after,
+  &::before {
+    opacity: 0.6;
+  }
+}
 
 .accordion__content {
   padding: 0 39px;
@@ -156,6 +209,7 @@
 
 .accordion__item.is-active .accordion__btn-decor {
   background-color: $color-default-white;
+  border-color: $color-default-white;
 
   &::before {
     z-index: 1;
@@ -174,5 +228,67 @@
 
   @include vp-767 {
     padding: 0 0 15px;
+  }
+}
+
+.accordion__item.is-active .accordion__btn:hover .accordion__btn-decor,
+.accordion__item.is-active .accordion__btn:focus .accordion__btn-decor {
+  background-color: $color-cerulean-blue;
+  border-color: $color-default-white;
+
+  &::before {
+    background-color: $color-default-white;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.accordion__item.is-active .accordion__btn:active span:first-of-type {
+  color: $color-default-white;
+}
+
+.accordion__item.is-active .accordion__btn:active,
+.accordion__item.is-active .accordion__btn:active .accordion__btn-decor,
+.accordion__item.is-active:has(.accordion__btn:active) {
+  background-color: $color-endeavour;
+  border-color: $color-endeavour;
+}
+
+.accordion__item.is-active .accordion__btn:active .accordion__btn-decor {
+  border-color: $color-default-white;
+
+  &::before {
+    background-color: $color-default-white;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.accordion__item:has(.accordion__btn:disabled),
+.accordion__item.is-active:has(.accordion__btn:disabled) {
+  border-color: transparent;
+  background-color: $color-mischka;
+}
+
+
+.accordion__item.is-active .accordion__btn:disabled,
+.accordion__item.is-active .accordion__btn:disabled .accordion__btn-decor {
+  background-color: $color-mischka;
+}
+
+.accordion__item.is-active .accordion__btn:disabled .accordion__btn-decor {
+  background-color: $color-mischka;
+  border-color: transparent;
+
+  &::after {
+    display: none;
+  }
+
+  &::before {
+    background-color: $color-default-white;
   }
 }

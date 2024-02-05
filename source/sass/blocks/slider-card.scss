@@ -18,6 +18,40 @@
   border-radius: 12px;
 }
 
+.slider-card__link:hover .styled-link__decor,
+.slider-card__link:focus .styled-link__decor {
+  background-color: $color-default-white;
+  color: $color-cerulean-blue;
+}
+
+.slider-card__link:hover .styled-link__decor svg,
+.slider-card__link:focus .styled-link__decor svg {
+  transform: rotate(45deg);
+}
+
+.slider-card__link:active .styled-link__decor {
+  opacity: 0.7;
+}
+
+.slider-card__link:active h3,
+.slider-card__link:active p,
+.slider-card__link:active .slider-card__date {
+  opacity: 0.7;
+}
+
+
+.slider-card__link.disabled .styled-link__decor {
+  background-color: $color-mischka;
+  opacity: 0.6;
+}
+
+.slider-card__link.disabled h3,
+.slider-card__link.disabled p,
+.slider-card__link.disabled .slider-card__date {
+  opacity: 0.6;
+  color: $color-mischka;
+}
+
 .slider-card__title-wrapper {
   position: relative;
   width: fit-content;

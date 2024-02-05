@@ -2,10 +2,15 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  width: 510px;
   color: $color-default-white;
   background-color: $color-cerulean-blue;
   border-radius: 16px;
+
+  &--primary {
+    gap: 18px;
+    color: $color-charcoal;
+    background-color: $color-default-white;
+  }
 
   @include vp-1439 {
     gap: 31px;
@@ -49,6 +54,20 @@
   }
 }
 
+.form--primary .form__title,
+.form--primary .form__text {
+  text-align: center;
+}
+
+.form--primary .form__title {
+  padding: 0;
+  color: $color-cerulean-blue;
+
+  &:not(:last-child) {
+    margin-bottom: 7px;
+  }
+}
+
 .form__text {
   margin: 0;
   color: $color-alabaster;
@@ -61,6 +80,10 @@
   @include vp-767 {
     font-size: 14px;
   }
+}
+
+.form--primary .form__text {
+  color: $color-charcoal;
 }
 
 .form__text br {
@@ -82,6 +105,7 @@
 }
 
 .form__input {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -103,56 +127,79 @@
   }
 }
 
+.form--primary .form__input label {
+  color: $color-charcoal;
+}
+
 .form__input input,
-.form__input textarea,
-.form__input select {
+.form__input textarea {
   width: 100%;
-
-  // padding: 18px 28px;
-  // line-height: 16px;
+  padding: 15px 24px;
+  line-height: 16px;
   border-radius: 8px;
-  border: 1px solid $color-default-white;
-  opacity: 0.3;
+  border: 1px solid rgba($color-default-white, 0.3);
   background-color: $color-cerulean-blue;
+  color: $color-default-white;
 
-  // @include hover {
-  //   border-color: $color-navy-blue;
+  &:hover,
+  &:focus {
+    border: 1px solid rgba($color-default-white, 1);
+    outline-offset: 4px;
+  }
 
-  //   &::placeholder {
-  //     color: $color-navy-blue;
-  //   }
-  // }
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: rgba($color-default-white, 0.2);
+  }
+}
 
-  // &::-webkit-contacts-auto-fill-button {
-  //   visibility: hidden;
-  //   position: absolute;
-  //   right: 0;
-  // }
+.form__input.is-invalid input,
+.form__input.is-invalid textarea {
+  border-color: $color-wild-watermelon;
+  background-color: rgba($color-wild-watermelon, 0.2);
+}
 
-  // &:focus,
-  // :not(:placeholder-shown) {
-  //   border-color: $color-resolution-blue;
-  //   outline-offset: 2px;
-  // }
+.form__input.is-invalid .input-message.is-invalid,
+.form__select .input-message.is-invalid,
+.form__checkbox .input-message.is-invalid {
+  position: absolute;
+  right: 0;
+  bottom: -14px;
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-wild-watermelon;
+  opacity: 0.8;
 
-  // &:disabled {
-  //   border-color: rgba($color-navy-blue, 0.1);
-  //   pointer-events: none;
-  //   user-select: none;
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
 
-  //   &::placeholder {
-  //     color: rgba($color-navy-blue, 0.5);
-  //   }
-  // }
+.form__input:has(input:hover) label,
+.form__input:has(textarea:hover) label,
+.form__input:has(input:focus) label,
+.form__input:has(textarea:focus) label {
+  opacity: 1;
+}
 
-  // &:user-invalid {
-  //   border-color: $color-torch-red;
-  // }
+.form--primary .form__input input,
+.form--primary .form__input select,
+.form--primary .form__select .custom-select__button {
+  border: 1px solid rgba($color-charcoal, 0.3);
+  background-color: $color-default-white;
+}
 
-  // @include vp-1199 {
-  //   height: 50px;
-  //   padding: 15px 15.27px;
-  // }
+
+.form__input:has(input:disabled),
+.form__input:has(textarea:disabled) {
+  pointer-events: none;
+}
+
+.form__input:has(input:disabled) label,
+.form__input:has(textarea:disabled) label {
+  opacity: 0.6;
 }
 
 .form__select {
@@ -165,12 +212,27 @@
   }
 }
 
+.form--primary .form__select {
+  padding: 27px 0 0;
+}
+
 .form__select .custom-select__button {
   height: 50px;
   padding: 5px 19px 5px 10px;
   border-radius: 8px;
   border: 1px solid rgba($color-default-white, 0.3);
   background-color: $color-cerulean-blue;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba($color-default-white, 1);
+    outline-offset: 4px;
+  }
+}
+
+.form__select.custom-select.is-invalid .custom-select__button {
+  border: 1px solid $color-wild-watermelon;
+  background-color: rgba($color-wild-watermelon, 0.2);
 }
 
 .form__select .custom-select__label {
@@ -189,6 +251,17 @@
     font-size: 12px;
     line-height: 14px;
   }
+}
+
+.form__select:has(.custom-select__button:hover) .custom-select__label,
+.form__select:has(.custom-select__button:focus) .custom-select__label {
+  opacity: 1;
+}
+
+.form--primary .form__select .custom-select__label {
+  top: 9px;
+  line-height: 18px;
+  color: $color-charcoal;
 }
 
 .form__select.custom-select.is-open .custom-select__label,
@@ -212,11 +285,16 @@
   background-color: $color-default-white;
 }
 
+.form--primary .form__select .custom-select__icon {
+  background-color: $color-charcoal;
+}
+
 .form__select .custom-select__item {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   height: 48px;
+  padding: 0 20px;
   color: $color-charcoal;
 }
 
@@ -227,11 +305,24 @@
   border: 1px solid $color-default-white;
 }
 
-.form__select .custom-select__item:hover,
-.form__select .custom-select__item[aria-selected="true"],
-.form__select .custom-select__item[aria-selected="true"]:hover {
-  background-color: $color-cerulean-blue;
+.form__select .custom-select__item:hover {
+  color: $color-cerulean-blue;
+  background-color: transparent;
+}
+
+.form__select .custom-select__item:focus,
+.form__select .custom-select__item[aria-selected="true"] {
   color: $color-default-white;
+  background-color: $color-cerulean-blue;
+}
+
+.form__select .custom-select__item[aria-selected="true"]:focus {
+  opacity: 0.7;
+}
+
+.form__select .custom-select__item[aria-selected="true"]:hover {
+  opacity: 0.7;
+  background-color: $color-cerulean-blue;
 }
 
 .form__select.custom-select.not-empty .custom-select__text {
@@ -250,33 +341,8 @@
   }
 }
 
-// .form__select {
-//   gap: 12px;
-//   margin-top: 5px;
-
-//   @include vp-1439 {
-//     gap: 7px;
-//     margin-top: 0;
-//   }
-
-//   @include vp-767 {
-//     gap: 12px;
-//   }
-// }
-
-// .form__select label {
-//   line-height: 14px;
-
-//   @include vp-1439 {
-//     line-height: 20px;
-//   }
-
-//   @include vp-767 {
-//     line-height: 14px;
-//   }
-// }
-
 .form__checkbox {
+  position: relative;
   margin-top: 5px;
 
   @include vp-767 {
@@ -305,7 +371,7 @@
   clip-path: inset(100%);
 }
 
-.form__checkbox span:first-of-type {
+.form__checkbox-decor {
   position: relative;
   display: flex;
   justify-content: center;
@@ -319,7 +385,24 @@
   color: transparent;
 }
 
-.form__checkbox span {
+.form__checkbox input:hover + .form__checkbox-decor,
+.form__checkbox input:focus + .form__checkbox-decor {
+  border: 1px solid rgba($color-default-white, 1);
+  outline-offset: 4px;
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+.form__checkbox--primary .form__checkbox-decor {
+  background-color: $color-default-white;
+  border: 1px solid rgba($color-charcoal, 0.3);
+}
+
+.form__checkbox.is-invalid .form__checkbox-decor {
+  border-color: $color-wild-watermelon;
+  background-color: rgba($color-wild-watermelon, 0.2);
+}
+
+.form__checkbox-text {
   font-size: 12px;
   line-height: 12px;
   opacity: 0.9;
@@ -342,7 +425,37 @@
   }
 }
 
-.form__checkbox input:checked + span:first-of-type {
+.form--primary .btn {
+  width: fit-content;
+  margin: 11px auto 0;
+}
+
+.form__checkbox input:checked + .form__checkbox-decor {
   color: $color-cerulean-blue;
   background-color: $color-default-white;
+}
+
+.form__checkbox--primary input:checked + .form__checkbox-decor {
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+}
+
+.form__checkbox input:checked:hover + .form__checkbox-decor,
+.form__checkbox input:checked:focus + .form__checkbox-decor {
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+  border-color: $color-default-white;
+}
+
+.form__checkbox input:disabled + .form__checkbox-decor {
+  background-color: rgba($color-default-white, 0.6);
+}
+
+.form__checkbox input:checked:disabled + .form__checkbox-decor {
+  background-color: $color-mischka;
+  color: rgba($color: $color-default-white, $alpha: 0.7);
+}
+
+.form__checkbox:has(input:disabled) {
+  pointer-events: none;
 }

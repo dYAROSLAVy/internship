@@ -14,14 +14,8 @@
   letter-spacing: 0.28px;
   user-select: none;
   transition: opacity $trans-default;
-  border: 1px solid #316dc2;
+  border: 1px solid $color-cerulean-blue;
   border-radius: 30px;
-
-  &--primary {
-    color: $color-default-white;
-    border-color: $color-default-white;
-  }
-
 
   @include vp-767 {
     gap: 20px;
@@ -32,32 +26,49 @@
     letter-spacing: 0.24px;
   }
 
+  &:disabled {
+    pointer-events: none;
+  }
 
-  // &:disabled {
-  //   background-color: $color-nobel;
-  //   pointer-events: none;
-  // }
-
-  // @include hover-focus {
-  //   background-color: $color-default-white;
-  //   color: $color-resolution-blue;
-  //   border-color: $color-resolution-blue;
-  //   outline-offset: 2px;
-  // }
-
-  // @include active {
-  //   color: $color-default-white;
-  //   background-color: $color-resolution-blue;
-  // }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-default-white;
+    background-color: $color-cerulean-blue;
+    outline-offset: 3px;
+  }
 }
 
-// .btn.disabled {
-//   background-color: $color-nobel;
-// }
+.btn--primary {
+  color: $color-default-white;
+  border-color: $color-default-white;
+  background-color: $color-cerulean-blue;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-cerulean-blue;
+    background-color: $color-default-white;
+  }
+}
+
+.btn:disabled,
+.btn.disabled {
+  border-color: $color-mischka;
+}
 
 .btn__text {
   width: 100%;
   padding-left: 1px;
+}
+
+.btn:active .btn__text {
+  opacity: 0.7;
+}
+
+.btn:disabled .btn__text,
+.btn.disabled .btn__text {
+  color: $color-mischka;
 }
 
 .btn__decor {
@@ -75,6 +86,36 @@
     width: 34px;
     height: 34px;
   }
+}
+
+.btn:hover .btn__decor,
+.btn:focus .btn__decor,
+.btn:active .btn__decor {
+  background-color: $color-default-white;
+  color: $color-cerulean-blue;
+}
+
+.btn--primary:hover .btn__decor,
+.btn--primary:focus .btn__decor,
+.btn--primary:active .btn__decor {
+  background-color: $color-cerulean-blue;
+  color: $color-default-white;
+}
+
+.btn:hover .btn__decor svg,
+.btn:focus .btn__decor svg,
+.btn:active .btn__decor svg {
+  transform: rotate(45deg);
+}
+
+.btn:active .btn__decor svg {
+  opacity: 0.7;
+}
+
+.btn:disabled .btn__decor,
+.btn.disabled .btn__decor {
+  background-color: $color-mischka;
+  color: rgba($color-default-white, $alpha: 0.6);
 }
 
 .btn--primary .btn__decor {

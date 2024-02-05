@@ -59,13 +59,27 @@
 
   &:hover,
   &:focus {
+    background-color: transparent;
+    color: $color-cerulean-blue;
     opacity: 1;
+  }
+
+  &:disabled {
+    color: $color-mischka;
   }
 }
 
 .news__tabs-btn.is-active {
   opacity: 1;
   border-color: $color-cerulean-blue;
+
+
+  &:hover,
+  &:focus {
+    background-color: $color-cerulean-blue;
+    color: $color-default-white;
+    opacity: 1;
+  }
 }
 
 .news__slider {

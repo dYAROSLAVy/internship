@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {Navigation, Scrollbar} from 'swiper/modules';
+import {Navigation, Scrollbar, A11y} from 'swiper/modules';
 
 const initReviewsSlider = () => {
   const swiperWrapper = document.querySelector('[data-reviews-slider]');
@@ -8,7 +8,7 @@ const initReviewsSlider = () => {
   const buttonNext = document.querySelector('[data-reviews-slider-btn-next]');
 
   const reviewsSlider = new Swiper(swiperWrapper, {
-    modules: [Navigation, Scrollbar],
+    modules: [Navigation, Scrollbar, A11y],
     loop: false,
     autoHeight: true,
     navigation: {
@@ -17,7 +17,6 @@ const initReviewsSlider = () => {
     },
     scrollbar: {
       el: scrollbar,
-      draggable: true,
       dragSize: 392,
     },
     breakpoints: {

@@ -130,4 +130,16 @@
 .footer__privacy-link {
   padding: 5px 0 1px;
   border-bottom: 1px solid $color-charcoal;
+
+  &:hover,
+  &:focus {
+    color: $color-cerulean-blue;
+    border-color: $color-cerulean-blue;
+    outline-offset: 3px;
+  }
+
+  &:active {
+    color: $color-endeavour;
+    border-color: $color-endeavour;
+  }
 }

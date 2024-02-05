@@ -19,25 +19,61 @@
       <h1 class="visually-hidden">Проект Стажировка.</h1>
       <!-- Если вручную не остановить слайдер, то не всегда проходит тесты из-за автоплея(по тз) -->
       <div data-test="slider">
-        <div class="container container--relative">
-          <header class="header">
-            <div class="header__inner">
-              <span class="header__logo logo">
-                <img src="img/svg/logo.svg" alt="Логотип сайта." width="52" height="52">
-              </span>
-              <nav class="nav">
-                <button class="nav__btn btn" type="button">
-                  <span class="btn__text">МЕНЮ</span>
-                  <span class="nav__toggle">
-                    <span class="nav__toggle-decor"></span>
-                    <span class="nav__toggle-decor"></span>
-                    <span class="nav__toggle-decor"></span>
-                  </span>
-                </button>
-              </nav>
-            </div>
-          </header>
-        </div>
+        <header class="header" data-header="sticky">
+          <div class="header__inner container">
+            <span class="header__logo logo">
+              <img src="img/svg/logo.svg" alt="Логотип сайта." width="52" height="52">
+            </span>
+            <nav class="nav nav--primary is-closed" data-header-nav="0">
+              <button class="nav__btn btn" type="button" data-nav-toggle="0">
+                <span class="btn__text">МЕНЮ</span>
+                <span class="nav__toggle">
+                  <span class="nav__toggle-decor"></span>
+                  <span class="nav__toggle-decor"></span>
+                  <span class="nav__toggle-decor"></span>
+                </span>
+              </button>
+              <ul class="nav__list" data-accordion="parent">
+                <li class="nav__item">
+                  <a class="nav__main-link" href="#about">О ПРОЕКТЕ</a>
+                </li>
+                <li class="nav__item nav__item--accordion" data-accordion="element">
+                  <a class="nav__main-link nav__main-link--primary" href="#" data-accordion="button">
+                    <span>ПРОГРАММЫ</span>
+                  </a>
+                  <div data-accordion="content">
+                    <div class="nav__accordion-list">
+                      <a class="nav__link" href="#internships">Стажировки</a>
+                      <a class="nav__link" href="#volunteering">Волонтёрство</a>
+                      <a class="nav__link" href="#study">Учёба</a>
+                      <a class="nav__link" href="#religion">Религия</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__main-link" href="#">КАК ПОЕХАТЬ</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__main-link" href="#">ОТЗЫВЫ</a>
+                </li>
+                <li class="nav__item nav__item--accordion" data-accordion="element">
+                  <a class="nav__main-link nav__main-link--primary" href="#" data-accordion="button">НОВОСТИ</a>
+                  <div data-accordion="content">
+                    <div class="nav__accordion-list">
+                      <a class="nav__link" href="#">Интервью с участницей</a>
+                      <a class="nav__link" href="#">Путешествуем по миру</a>
+                      <a class="nav__link" href="#">Новая программа волонтёрства</a>
+                      <a class="nav__link" href="#">Построй свою карьеру</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__main-link" href="#">КОНТАКТЫ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
         <section class="hero">
           <h2 class="visually-hidden">Возможности проекта.</h2>
           <div class="hero__slider swiper" data-hero-slider="0">
@@ -219,7 +255,7 @@
         </section>
       </div>
       <div data-test="about">
-        <section class="about">
+        <section class="about" id="about">
           <div class="container">
             <div class="about__top-wrapper">
               <div class="about__top-left-column">
@@ -232,14 +268,14 @@
                   и&nbsp;средних стадиях карьеры, предоставляя им&nbsp;инструменты для решения сложных проблем,
                   с&nbsp;которыми сталкиваются в&nbsp;мире. Цель центра&nbsp;&mdash; наделить этих людей способностью
                   инициировать значимые изменения.</p>
-                <a class="btn" href="#">
+                <button class="btn" type="button" data-open-modal="0">
                   <span class="btn__text">ПОДРОБНЕЕ О ПРОЕКТЕ</span>
                   <span class="btn__decor">
                     <svg width="10" height="10">
                       <use href="__spritemap#sprite-arrow"></use>
                     </svg>
                   </span>
-                </a>
+                </button>
               </div>
             </div>
             <h3 class="visually-hidden">Наши преимущества</h3>
@@ -323,7 +359,7 @@
               <div class="programs__slider">
                 <div class="swiper" data-programs-slider="0">
                   <div class="swiper-wrapper">
-                    <div class="programs__card slider-card swiper-slide">
+                    <div class="programs__card slider-card swiper-slide" id="internships">
                       <div class="slider-card__picture-decor picture picture--decor picture--overlay">
                         <picture>
                           <source type="image/webp" media="(max-width: 767px)"
@@ -359,7 +395,7 @@
                         </div>
                       </a>
                     </div>
-                    <div class="programs__card slider-card swiper-slide">
+                    <div class="programs__card slider-card swiper-slide" id="volunteering">
                       <div class="slider-card__picture-decor picture picture--decor picture--overlay">
                         <picture>
                           <source type="image/webp" media="(max-width: 767px)"
@@ -395,7 +431,7 @@
                         </div>
                       </a>
                     </div>
-                    <div class="programs__card slider-card swiper-slide">
+                    <div class="programs__card slider-card swiper-slide" id="study">
                       <div class="slider-card__picture-decor picture picture--decor picture--overlay">
                         <picture>
                           <source type="image/webp" media="(max-width: 767px)"
@@ -431,7 +467,7 @@
                         </div>
                       </a>
                     </div>
-                    <div class="programs__card slider-card swiper-slide">
+                    <div class="programs__card slider-card swiper-slide" id="religion">
                       <div class="slider-card__picture-decor picture picture--decor picture--overlay">
                         <picture>
                           <source type="image/webp" media="(max-width: 767px)"
@@ -450,7 +486,7 @@
                       </div>
                       <a class="slider-card__link" href="#">
                         <div class="slider-card__title-wrapper">
-                          <h3>Стажировки</h3>
+                          <h3>Религия</h3>
                           <span class="slider-card__text-decor">
                             <svg width="18" height="18">
                               <use href="__spritemap#sprite-angle-top"></use>
@@ -633,12 +669,12 @@
           <div class="container">
             <div class="news__inner section-inner">
               <h2 class="news__title title">Новости и материалы</h2>
-              <div class="news__tabs">
-                <button class="news__tabs-btn is-active btn" type="button">ОБЩЕЕ</button>
-                <button class="news__tabs-btn btn" type="button">ВОЛОНТЁРСТВО</button>
-                <button class="news__tabs-btn btn" type="button">СТАЖИРОВКИ</button>
-                <button class="news__tabs-btn btn" type="button">КАРЬЕРА</button>
-                <button class="news__tabs-btn btn" type="button">ПУТЕШЕСТВИЯ</button>
+              <div class="news__tabs" data-news-tabs="0">
+                <button class="news__tabs-btn is-active btn" type="button" data-news-tab="0">ОБЩЕЕ</button>
+                <button class="news__tabs-btn btn" type="button" data-news-tab="0">ВОЛОНТЁРСТВО</button>
+                <button class="news__tabs-btn btn" type="button" data-news-tab="0">СТАЖИРОВКИ</button>
+                <button class="news__tabs-btn btn" type="button" data-news-tab="0">КАРЬЕРА</button>
+                <button class="news__tabs-btn btn" type="button" data-news-tab="0">ПУТЕШЕСТВИЯ</button>
               </div>
               <div class="news__slider">
                 <div class="swiper" data-news-slider="0">
@@ -754,9 +790,9 @@
                       <div class="slider-card__picture-decor picture picture--decor">
                         <picture>
                           <source type="image/webp" media="(max-width: 1439px)"
-                          srcset="img/news/news-3-tablet.webp, img/news/news-3-tablet@2x.webp 2x">
-                        <source type="image/jpg" media="(max-width: 1439px)"
-                          srcset="img/news/news-3-tablet.jpg, img/news/news-3-tablet@2x.jpg 2x">
+                            srcset="img/news/news-3-tablet.webp, img/news/news-3-tablet@2x.webp 2x">
+                          <source type="image/jpg" media="(max-width: 1439px)"
+                            srcset="img/news/news-3-tablet.jpg, img/news/news-3-tablet@2x.jpg 2x">
                           <source type="image/webp" srcset="img/news/news-3.webp, img/news/news-3@2x.webp 2x">
                           <img src="img/news/news-3.jpg" srcset="img/news/news-3@2x.jpg" width="1440" height="800"
                             alt="">
@@ -1419,10 +1455,14 @@
                   </button>
                   <div class="accordion__content" data-accordion="content">
                     <p>
-                      Студенты, участвующие в&nbsp;проекте, могут использовать полученные знания и&nbsp;навыки
-                      в&nbsp;своей будущей профессиональной деятельности или продолжить обучение в&nbsp;высших учебных
-                      заведениях. Кроме того, многие университеты и&nbsp;колледжи предоставляют кредиты за&nbsp;участие
-                      в&nbsp;программе обмена студентами.
+                      Процесс регистрации на&nbsp;программу обмена включает выбор университета-партнера и&nbsp;программы
+                      обмена,
+                      общение с&nbsp;координатором программы, заполнение заявления и&nbsp;предоставление необходимых
+                      документов,
+                      прохождение интервью, оформление визы, жилья и&nbsp;страховки, обучение по&nbsp;безопасности
+                      за&nbsp;границей и
+                      подписание договора об&nbsp;участии в&nbsp;программе. Подробнее можно узнать позвонив
+                      в&nbsp;центр.
                     </p>
                   </div>
                 </li>
@@ -1611,11 +1651,13 @@
                   </p>
                   <p class="contacts__text-wrapper">
                     <small class="contacts__info-tile">ТЕЛЕФОН</small>
-                    <a class="contacts__info-text" href="tel:+796387687676">+7 963 876 876 76</a>
+                    <a class="contacts__info-text contacts__info-text--link" href="tel:+796387687676">+7 963 876 876
+                      76</a>
                   </p>
                   <p class="contacts__text-wrapper">
                     <small class="contacts__info-tile">EMAIL</small>
-                    <a class="contacts__info-text" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
+                    <a class="contacts__info-text contacts__info-text--link"
+                      href="mailto:Info@stazh.ru">Info@stazh.ru</a>
                   </p>
                 </div>
               </div>
@@ -1657,14 +1699,14 @@
                 </picture>
               </div>
               <div class="contact-form__form-container form">
-                <div class="form__text-wrapper">
+                <div>
                   <h3 class="form__title">Напишите нам</h3>
                   <p class="form__text">Оставьте ваши контакты, если у&nbsp;вас остались вопросы&nbsp;&mdash;
                     <br>мы&nbsp;на&nbsp;них ответим!
                   </p>
                 </div>
                 <div data-form-validate="data-form-validate" data-callback="base">
-                  <form action="https://echo.htmlacademy.ru/" method="post" id="rt">
+                  <form action="https://echo.htmlacademy.ru/" method="post" id="contact-form">
                     <div class="form__inputs-wrapper">
                       <div class="form__input" data-validate-type="text" data-limitation="name"
                         data-message-base="Поле обязательно к заполнению"
@@ -1678,19 +1720,21 @@
                         <label for="tel">Телефон</label>
                         <input type="tel" required name="tel" id="tel">
                       </div>
-                      <div class="form__input">
+                      <div class="form__input" data-validate-type="text" data-required="data-required"
+                        data-message-base="Поле обязательно к заполнению">
                         <label for="message">Ваше сообщение</label>
-                        <textarea name="message" id="message"></textarea>
+                        <textarea name="message" required id="message"></textarea>
                       </div>
                       <div class="form__select custom-select" data-select="data-select" data-validate-type="select"
-                        data-name="city" data-id="city">
+                        data-name="city" data-id="city" data-required="data-required"
+                        data-message-base="Выберите одну из опций">
                         <span class="custom-select__label">Выберите город</span>
                         <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
                           <span class="custom-select__text"></span>
                           <span class="custom-select__icon"></span>
                         </button>
                         <ul class="custom-select__list" role="listbox">
-                          <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false"
+                          <li class="custom-select__item" tabindex="0" data-select-value="none" aria-selected="false"
                             role="option"></li>
                           <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false"
                             role="option">Москва</li>
@@ -1700,21 +1744,22 @@
                             role="option">Тюмень</li>
                         </ul>
                       </div>
-                      <div class="form__checkbox">
+                      <div class="form__checkbox" data-required="data-required" data-validate-type="checkbox"
+                        data-message-base="Поставьте галочку">
                         <label>
                           <input type="checkbox" required name="personal-data" id="personal-data">
-                          <span>
+                          <span class="form__checkbox-decor">
                             <svg width="10" height="10">
                               <use href="__spritemap#sprite-check"></use>
                             </svg>
                           </span>
-                          <span>Я согласен на обработку моих персональных данных</span>
+                          <span class="form__checkbox-text">Я согласен на обработку моих персональных данных</span>
                         </label>
                       </div>
                     </div>
                   </form>
                 </div>
-                <button class="btn btn--primary" form="rt" type="submit">
+                <button class="btn btn--primary" form="contact-form" type="submit">
                   <span class="btn__text">ОТПРАВИТЬ</span>
                   <span class="btn__decor">
                     <svg width="10" height="10">
@@ -1794,6 +1839,83 @@
       </div>
     </footer>
   </div>
+
+
+  <!-- <div class="contacts-modal modal modal--preload" data-modal="0">
+    <div class="modal__wrapper">
+      <div class="modal__overlay" data-close-modal="0"></div>
+      <div class="modal__content">
+        <div class="form form--primary">
+          <div>
+            <h3 class="form__title">Напишите нам</h3>
+            <p class="form__text">Оставьте ваши контакты, если у&nbsp;вас остались вопросы&nbsp;&mdash;
+              <br>мы&nbsp;на&nbsp;них ответим!
+            </p>
+          </div>
+          <div data-form-validate="data-form-validate" data-callback="base">
+            <form action="https://echo.htmlacademy.ru/" method="post" id="rt">
+              <div class="form__inputs-wrapper">
+                <div class="form__input" data-validate-type="text" data-limitation="name"
+                  data-message-base="Поле обязательно к заполнению"
+                  data-message-extra="Проверьте корректность заполнения поля" data-required="data-required">
+                  <label for="name">Имя</label>
+                  <input type="text" required name="name" id="name">
+                </div>
+                <div class="form__input" data-validate-type="phone" data-required="data-required"
+                  data-message-base="Поле обязательно к заполнению"
+                  data-message-extra="Проверьте корректность заполнения поля">
+                  <label for="tel">Телефон</label>
+                  <input type="tel" required name="tel" id="tel">
+                </div>
+                <div class="form__select custom-select" data-select="data-select" data-validate-type="select"
+                  data-name="city" data-id="city">
+                  <span class="custom-select__label">Выберите город</span>
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций">
+                    <span class="custom-select__text"></span>
+                    <span class="custom-select__icon"></span>
+                  </button>
+                  <ul class="custom-select__list">
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="false"
+                      role="option"></li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false"
+                      role="option">Москва</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false"
+                      role="option">Санкт-Петербург</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false"
+                      role="option">Тюмень</li>
+                  </ul>
+                </div>
+                <div class="form__checkbox form__checkbox--primary">
+                  <label>
+                    <input type="checkbox" required name="personal-data" id="personal-data">
+                    <span>
+                      <svg width="10" height="10">
+                        <use href="__spritemap#sprite-check"></use>
+                      </svg>
+                    </span>
+                    <span>Я согласен на обработку моих персональных данных</span>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <button class="btn" form="rt" type="submit">
+            <span class="btn__text">ОТПРАВИТЬ</span>
+            <span class="btn__decor">
+              <svg width="10" height="10">
+                <use href="__spritemap#sprite-arrow"></use>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+          <svg width="20" height="20">
+            <use href="__spritemap#sprite-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div> -->
 
   <script type="module" src="js/main.js"></script>
 </body>

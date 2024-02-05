@@ -1,5 +1,10 @@
 .nav {
   display: flex;
+
+  &--primary {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
 
 .nav__btn {
@@ -7,8 +12,13 @@
   padding: 3px 3px 3px 19px;
   font-size: 14px;
   line-height: 14px;
+  font-weight: 500;
   letter-spacing: 0.28px;
   background-color: $color-default-white;
+}
+
+.nav__btn .btn__text {
+  width: fit-content;
 }
 
 .nav__toggle {
@@ -24,22 +34,34 @@
   border-radius: 50%;
 }
 
+.nav__btn:hover .nav__toggle,
+.nav__btn:focus .nav__toggle,
+.nav__btn:active .nav__toggle {
+  background-color: $color-default-white;
+}
+
+.nav__btn:disabled .nav__toggle {
+  background-color: $color-mischka;
+}
+
 .nav__toggle-decor {
   width: 18px;
   height: 1px;
   background-color: $color-default-white;
+}
 
-  &:nth-child(1n) {
-    top: 18px;
-  }
+.nav__btn:hover .nav__toggle-decor,
+.nav__btn:focus .nav__toggle-decor,
+.nav__btn:active .nav__toggle-decor {
+  background-color: $color-cerulean-blue;
+}
 
-  &:nth-child(2n) {
-    top: 12px;
-  }
+.nav__btn:active .nav__toggle-decor {
+  opacity: 0.7;
+}
 
-  &:nth-child(3n) {
-    top: 20.25px;
-  }
+.nav__btn:disabled .nav__toggle-decor {
+  opacity: 0.6;
 }
 
 .nav__list {
@@ -61,12 +83,153 @@
   }
 }
 
+.nav--primary .nav__list {
+  flex-direction: column;
+  gap: 10px;
+  background-color: $color-cerulean-blue;
+  border-radius: 16px;
+}
+
 .nav__link {
   padding: 20px 0;
+  color: $color-charcoal;
+  line-height: 26px;
+
+  &:hover,
+  &:focus {
+    color: $color-cerulean-blue;
+  }
+
+  &:active {
+    color: $color-endeavour;
+  }
 
   @include vp-767 {
     padding: 5px 0;
     font-size: 14px;
     line-height: 20px;
   }
+}
+
+.nav--primary .nav__link {
+  width: fit-content;
+  margin: 2.5px 0;
+  padding: 4px 20px 4px 10px;
+  line-height: 16px;
+  color: $color-default-white;
+  opacity: 0.6;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.nav__main-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding: 7px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.32px;
+  color: $color-default-white;
+  opacity: 0.7;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+  }
+}
+
+.nav__main-link.disabled {
+  color: $color-mischka;
+}
+
+.nav__main-link--primary::after {
+  content: "";
+  width: 13px;
+  height: 6px;
+  margin-left: 9.5px;
+  background-color: $color-default-white;
+  clip-path: polygon(100% 0, 100% 20%, 50% 100%, 0 20%, 0 0, 50% 80%);
+  opacity: 0.7;
+  transition: transform $trans-default;
+}
+
+.nav__main-link--primary.disabled {
+  &::after {
+    background-color: $color-mischka;
+  }
+}
+
+.nav__accordion-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 13px;
+}
+
+.nav.is-open {
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba($color-black-pearl, 0.4);
+  }
+}
+
+.nav.is-closed .nav__list {
+  width: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.nav.is-open .nav__list {
+  align-items: flex-start;
+  max-width: 286px;
+  padding: 26px 25px 26px 18px;
+}
+
+.nav.is-open .nav__btn {
+  justify-content: space-between;
+  width: 100%;
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+}
+
+.nav.is-open .nav__toggle {
+  background-color: $color-default-white;
+}
+
+.nav.is-open .nav__toggle-decor {
+  position: absolute;
+  width: 23px;
+  background-color: $color-cerulean-blue;
+
+  &:nth-child(1n) {
+    transform: rotate(-45deg);
+  }
+
+  &:nth-child(2n) {
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(3n) {
+    display: none;
+    top: 20.25px;
+  }
+}
+
+.nav__list .nav__item--accordion.is-active .nav__accordion-list {
+  padding: 0 13px;
+}
+
+.nav__list .nav__item--accordion.is-active .nav__main-link--primary::after {
+  transform: rotate(180deg);
 }

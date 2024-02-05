@@ -7,12 +7,12 @@
 .slider-controls__btns-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 14px;
   align-items: flex-end;
   margin-left: auto;
 
   @include vp-767 {
-    gap: 8px;
+    gap: 12px;
   }
 }
 
@@ -20,10 +20,38 @@
   align-items: center;
   min-width: auto;
   min-height: auto;
-  width: 22px;
-  height: 22px;
-  padding: 0;
+  width: 32px;
+  height: 42px;
+  padding: 10px 0;
   border: 1px solid transparent;
+  margin: -10px -6px;
+}
+
+.slider-controls__btn {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    color: $color-cerulean-blue;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    color: $color-mischka;
+  }
 }
 
 .slider-controls .swiper-scrollbar.swiper-scrollbar-horizontal {
@@ -31,6 +59,7 @@
   width: 91.45%;
   height: 2px;
   margin-top: 9px;
+  background-color: rgba($color-cerulean-blue, $alpha: 0.2);
 
   @include vp-1439 {
     width: 82.6%;
@@ -49,14 +78,16 @@
   display: flex;
   position: static;
   width: fit-content;
+  margin: -5px 0;
 }
 
 .slider-controls .swiper-pagination-bullet {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   font-size: 16px;
   line-height: 20px;
   color: #316dc2;
@@ -64,21 +95,84 @@
   background-color: transparent;
 
   @include vp-767 {
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 36px;
+  }
+
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+
+    &::after {
+      border-color: $color-cerulean-blue;
+    }
+  }
+
+  &:active {
+    opacity: 1;
+    color: $color-default-white;
+
+    &::after {
+      background-color: $color-endeavour;
+    }
   }
 }
 
 .slider-controls .swiper-pagination-bullet-active {
-  color: #ffffff;
-  background: $color-cerulean-blue;
+  color: $color-default-white;
   opacity: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $color-cerulean-blue;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  @include vp-767 {
+    &::after {
+      width: 26px;
+      height: 26px;
+    }
+  }
 }
 
 .slider-controls .swiper-pagination-bullets.swiper-pagination-horizontal .swiper-pagination-bullet {
-  margin: 0 10px;
+  margin: 0 5px;
 
   @include vp-767 {
-    margin: 0 8px;
+    margin: 0 4px;
+  }
+}
+
+
+.slider-controls .swiper-pagination-bullet.disabled {
+  color: $color-default-white;
+
+  &::after {
+    background-color: $color-mischka;
   }
 }
