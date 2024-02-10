@@ -1,0 +1,19 @@
+.contacts-modal {
+  background-color: rgba($color-black-pearl, 0.4);
+
+  // transition: opacity $trans-modal,
+  //   transform $trans-modal,
+  //   visibility $trans-modal;
+}
+
+.contacts-modal .modal__content {
+  width: 510px;
+  min-height: 611px;
+  padding: 53px 80px;
+  border-radius: 16px;
+  background-color: $color-default-white;
+}
+
+.contacts-modal .modal__close-btn {
+  background-color: transparent;
+}

@@ -1,8 +1,19 @@
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+
+  @include vp-767 {
+    padding-bottom: 22px;
+  }
+}
+
 .hero__slider .hero-card {
   display: flex;
 }
 
-.hero__slider .swiper-pagination-horizontal.swiper-pagination {
+.hero__slider .hero__slider-pagination {
   position: static;
   display: flex;
   flex-wrap: wrap;
@@ -18,9 +29,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10px;
+  width: 18px;
   height: 38px;
-  margin: 0 6px;
+  margin: 0 2px;
   padding: 10px 0;
   background: transparent;
   opacity: 1;
@@ -46,7 +57,7 @@
   }
 
   @include vp-767 {
-    width: 8px;
+    width: 16px;
     height: 28px;
 
     &::after {
@@ -59,6 +70,17 @@
       height: 8px;
     }
   }
+
+  // В стайлагде вообще нет состояний для ховера и фокуса, поэтому принял решение сделать так
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::after {
+      outline: solid 1px rgba($color-cerulean-blue, 0.5);
+      outline-offset: 1px;
+    }
+  }
 }
 
 .hero__slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
@@ -66,5 +88,12 @@
 
   &::before {
     background-color: $color-cerulean-blue;
+  }
+}
+
+.hero__slider .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet.disabled {
+  &::after {
+    background-color: $color-default-white;
+    border-color: $color-mischka;
   }
 }

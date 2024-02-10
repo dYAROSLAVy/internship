@@ -1,8 +1,9 @@
 // Vendor
 // ---------------------------------
 @import "vendor/normalize";
-@import "swiper/css/bundle";
-
+@import "vendor/data-accordion";
+@import "vendor/custom-select";
+@import "vendor/modal";
 
 // Global
 // ---------------------------------
@@ -17,8 +18,29 @@
 // ---------------------------------
 @import "blocks/btn";
 @import "blocks/picture";
+@import "blocks/title";
+@import "blocks/form";
+@import "blocks/section-inner";
+@import "blocks/socials";
 @import "blocks/header";
 @import "blocks/logo";
 @import "blocks/nav";
 @import "blocks/hero";
 @import "blocks/hero-card";
+@import "blocks/about";
+@import "blocks/about-card";
+@import "blocks/programs";
+@import "blocks/slider-card";
+@import "blocks/slider-controls";
+@import "blocks/styled-link";
+@import "blocks/grants";
+@import "blocks/numbered-item";
+@import "blocks/news";
+@import "blocks/faq";
+@import "blocks/accordion";
+@import "blocks/reviews";
+@import "blocks/review-card";
+@import "blocks/contacts";
+@import "blocks/contact-form";
+@import "blocks/footer";
+@import "blocks/contacts-modal";

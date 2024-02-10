@@ -1,18 +1,13 @@
 .header {
-  position: absolute;
-  top: 30px;
-  width: calc(100% - 200px);
+  position: fixed;
+  width: 100%;
   min-height: 54px;
   z-index: 2;
+  transition: transform $trans-default;
+}
 
-  @include vp-1439 {
-    width: calc(100% - 90px);
-  }
-
-  @include vp-767 {
-    top: 20px;
-    width: calc(100% - 30px);
-  }
+.header.is-hidden {
+  transform: translateY(-100%);
 }
 
 .header__logo {
@@ -23,4 +18,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 30px;
+
+  @include vp-767 {
+    padding-top: 20px;
+  }
 }

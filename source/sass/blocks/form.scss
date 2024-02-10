@@ -1,0 +1,461 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+  border-radius: 16px;
+
+  &--primary {
+    gap: 18px;
+    color: $color-charcoal;
+    background-color: $color-default-white;
+  }
+
+  @include vp-1439 {
+    gap: 31px;
+  }
+
+  @include vp-767 {
+    gap: 26px;
+  }
+}
+
+.form__title {
+  margin: 0;
+  padding-top: 12px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36px;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  @include vp-1439 {
+    padding-top: 10px;
+    font-size: 28px;
+    line-height: 28px;
+
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+
+  @include vp-767 {
+    padding-top: 1px;
+    font-size: 18px;
+    line-height: 22px;
+
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.form--primary .form__title,
+.form--primary .form__text {
+  text-align: center;
+}
+
+.form--primary .form__title {
+  padding: 0;
+  color: $color-cerulean-blue;
+
+  &:not(:last-child) {
+    margin-bottom: 7px;
+  }
+}
+
+.form__text {
+  margin: 0;
+  color: $color-alabaster;
+  opacity: 0.9;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+  }
+}
+
+.form--primary .form__text {
+  color: $color-charcoal;
+}
+
+.form__text br {
+  display: none;
+
+  @include vp-767 {
+    display: inline;
+  }
+}
+
+.form__inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include vp-767 {
+    gap: 20px;
+  }
+}
+
+.form__input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  @include vp-767 {
+    gap: 12px;
+  }
+}
+
+.form__input label {
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-alabaster;
+  opacity: 0.8;
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.form--primary .form__input label {
+  color: $color-charcoal;
+}
+
+.form__input input,
+.form__input textarea {
+  width: 100%;
+  padding: 15px 24px;
+  line-height: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba($color-default-white, 0.3);
+  background-color: $color-cerulean-blue;
+  color: $color-default-white;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba($color-default-white, 1);
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    background-color: rgba($color-default-white, 0.2);
+  }
+}
+
+.form__input.is-invalid input,
+.form__input.is-invalid textarea {
+  border-color: $color-wild-watermelon;
+  background-color: rgba($color-wild-watermelon, 0.2);
+}
+
+.form__input.is-invalid .input-message.is-invalid,
+.form__select .input-message.is-invalid,
+.form__checkbox .input-message.is-invalid {
+  position: absolute;
+  right: 0;
+  bottom: -14px;
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-wild-watermelon;
+  opacity: 0.8;
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+
+.form__input:has(input:hover) label,
+.form__input:has(textarea:hover) label,
+.form__input:has(input:focus) label,
+.form__input:has(textarea:focus) label {
+  opacity: 1;
+}
+
+.form--primary .form__input input,
+.form--primary .form__input select,
+.form--primary .form__select .custom-select__button {
+  border: 1px solid rgba($color-charcoal, 0.3);
+  background-color: $color-default-white;
+}
+
+
+.form__input:has(input:disabled),
+.form__input:has(textarea:disabled) {
+  pointer-events: none;
+}
+
+.form__input:has(input:disabled) label,
+.form__input:has(textarea:disabled) label {
+  opacity: 0.6;
+}
+
+.form__select {
+  width: 100%;
+  margin: 0;
+  padding: 31px 0 0;
+
+  @include vp-1439 {
+    padding: 27px 0 0;
+  }
+}
+
+.form--primary .form__select {
+  padding: 27px 0 0;
+}
+
+.form__select .custom-select__button {
+  height: 50px;
+  padding: 5px 19px 5px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba($color-default-white, 0.3);
+  background-color: $color-cerulean-blue;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba($color-default-white, 1);
+    outline-offset: 4px;
+  }
+}
+
+.form__select.custom-select.is-invalid .custom-select__button {
+  border: 1px solid $color-wild-watermelon;
+  background-color: rgba($color-wild-watermelon, 0.2);
+}
+
+.form__select .custom-select__label {
+  top: 11px;
+  left: 0;
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-alabaster;
+  opacity: 0.8;
+
+  @include vp-1439 {
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.form__select:has(.custom-select__button:hover) .custom-select__label,
+.form__select:has(.custom-select__button:focus) .custom-select__label {
+  opacity: 1;
+}
+
+.form--primary .form__select .custom-select__label {
+  top: 9px;
+  line-height: 18px;
+  color: $color-charcoal;
+}
+
+.form__select.custom-select.is-open .custom-select__label,
+.form__select.custom-select.not-empty .custom-select__label {
+  opacity: 0.8;
+}
+
+.form__select .custom-select__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 92%;
+  height: 100%;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.form__select .custom-select__icon {
+  width: 16px;
+  height: 9px;
+  background-color: $color-default-white;
+}
+
+.form--primary .form__select .custom-select__icon {
+  background-color: $color-charcoal;
+}
+
+.form__select .custom-select__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+  color: $color-charcoal;
+}
+
+.form__select .custom-select__list {
+  bottom: -4px;
+  max-height: 144px;
+  border-radius: 8px;
+  border: 1px solid $color-default-white;
+}
+
+.form__select .custom-select__item:hover {
+  color: $color-cerulean-blue;
+  background-color: transparent;
+}
+
+.form__select .custom-select__item:focus,
+.form__select .custom-select__item[aria-selected="true"] {
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+}
+
+.form__select .custom-select__item[aria-selected="true"]:focus {
+  opacity: 0.7;
+}
+
+.form__select .custom-select__item[aria-selected="true"]:hover {
+  opacity: 0.7;
+  background-color: $color-cerulean-blue;
+}
+
+.form__select.custom-select.not-empty .custom-select__text {
+  color: $color-alabaster;
+}
+
+.form__input input {
+  height: 50px;
+}
+
+.form__input textarea {
+  height: 98px;
+
+  @include vp-767 {
+    height: 94px;
+  }
+}
+
+.form__checkbox {
+  position: relative;
+  margin-top: 5px;
+
+  @include vp-767 {
+    margin-top: 0;
+  }
+}
+
+.form__checkbox label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form__checkbox input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.form__checkbox-decor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background-color: $color-cerulean-blue;
+  border-radius: 2px;
+  border: 1px solid rgba($color-default-white, 0.7);
+  color: transparent;
+}
+
+.form__checkbox input:hover + .form__checkbox-decor,
+.form__checkbox input:focus + .form__checkbox-decor {
+  border: 1px solid rgba($color-default-white, 1);
+  outline-offset: 4px;
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+.form__checkbox--primary .form__checkbox-decor {
+  background-color: $color-default-white;
+  border: 1px solid rgba($color-charcoal, 0.3);
+}
+
+.form__checkbox.is-invalid .form__checkbox-decor {
+  border-color: $color-wild-watermelon;
+  background-color: rgba($color-wild-watermelon, 0.2);
+}
+
+.form__checkbox-text {
+  font-size: 12px;
+  line-height: 12px;
+  opacity: 0.9;
+
+  @include vp-767 {
+    line-height: 14px;
+  }
+}
+
+.form .btn {
+  width: 100%;
+  margin-top: 12px;
+
+  @include vp-1439 {
+    margin-top: 9px;
+  }
+
+  @include vp-767 {
+    margin-top: 3px;
+  }
+}
+
+.form--primary .btn {
+  width: fit-content;
+  margin: 11px auto 0;
+}
+
+.form__checkbox input:checked + .form__checkbox-decor {
+  color: $color-cerulean-blue;
+  background-color: $color-default-white;
+}
+
+.form__checkbox--primary input:checked + .form__checkbox-decor {
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+}
+
+.form__checkbox input:checked:hover + .form__checkbox-decor,
+.form__checkbox input:checked:focus + .form__checkbox-decor {
+  color: $color-default-white;
+  background-color: $color-cerulean-blue;
+  border-color: $color-default-white;
+}
+
+.form__checkbox input:disabled + .form__checkbox-decor {
+  background-color: rgba($color-default-white, 0.6);
+}
+
+.form__checkbox input:checked:disabled + .form__checkbox-decor {
+  background-color: $color-mischka;
+  color: rgba($color: $color-default-white, $alpha: 0.7);
+}
+
+.form__checkbox:has(input:disabled) {
+  pointer-events: none;
+}

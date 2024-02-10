@@ -1,0 +1,155 @@
+.about__top-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 91.45%;
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  @include vp-1439 {
+    flex-direction: column;
+    gap: 32px;
+    width: 73.45%;
+  }
+
+  @include vp-767 {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.about__top-wrapper h3 {
+  margin: -2px 0 0;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 36px;
+  color: $color-cerulean-blue;
+
+  @include vp-1439 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.about__top-wrapper p {
+  margin: 0;
+}
+
+.about__top-left-column,
+.about__top-right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__top-left-column {
+  gap: 35px;
+  width: 42.06%;
+
+  @include vp-1439 {
+    gap: 24px;
+    width: 100%;
+  }
+
+  @include vp-767 {
+    gap: 15px;
+  }
+}
+
+.about__top-left-column p {
+  font-size: 22px;
+  line-height: 32px;
+
+  @include vp-1439 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.about__top-right-column {
+  width: 43.91%;
+  gap: 33px;
+
+  @include vp-1439 {
+    gap: 22px;
+    width: 100%;
+  }
+
+  @include vp-767 {
+    gap: 11px;
+  }
+}
+
+.about__top-right-column p {
+  @include vp-1439 {
+    font-size: 16px;
+    line-height: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.about__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 0;
+  padding: 50px 106px 32px;
+  background-color: $color-cerulean-blue;
+  color: $color-default-white;
+  list-style: none;
+  border-radius: 20px;
+
+  @include vp-1439 {
+    gap: 20px 30px;
+    padding: 40px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+
+    @include vp-767 {
+      gap: 0;
+      padding: 20px 20px 40px 10px;
+    }
+  }
+}
+
+.about__list li:nth-child(4n-3) .about-card__inner,
+.about__list li:nth-child(4n-2) .about-card__inner {
+  min-height: 152px;
+
+  @include vp-767 {
+    min-height: 128px;
+  }
+}
+
+.about__list li:nth-child(4n) .about-card__inner,
+.about__list li:nth-child(4n-1) .about-card__inner {
+  min-height: 132px;
+
+  @include vp-767 {
+    min-height: 128px;
+  }
+}
