@@ -1,3 +1,16 @@
+.news {
+  @include vp-767 {
+    overflow: hidden;
+  }
+}
+
+.news:has(.news__slider-controls) {
+  @include vp-767 {
+    // Нужно чтоб не было скачка при фокусе на кнопки слайдера
+    margin-bottom: -13px;
+  }
+}
+
 .news__inner {
   @include vp-1439 {
     gap: 30px;
@@ -19,6 +32,7 @@
 
   @include vp-767 {
     margin-top: 1px;
+    max-width: 100%;
 
     &:not(:last-child) {
       margin-bottom: 4px;
@@ -44,9 +58,11 @@
 
 .news__tabs-btn {
   min-height: 38px;
+  max-width: 100%;
   padding: 11px 26px;
   opacity: 0.6;
   border-color: transparent;
+  word-break: break-word;
 
   @include vp-1439 {
     padding: 11px 19px;
@@ -55,6 +71,7 @@
   @include vp-767 {
     min-height: 29px;
     padding: 4px 14px;
+    word-break: normal;
   }
 
   &:hover,
@@ -95,31 +112,30 @@
 .news__card {
   max-width: 286px;
   min-height: 400px;
-  padding: 0 46px 0 0;
+  padding: 10px 46px 0 0;
 
   &--primary {
     max-width: 604px;
-    padding: 0 215px 0 0;
+    padding: 10px  215px 0 0;
   }
 
   @include vp-1439 {
     max-width: 324px;
     min-height: 350px;
-    padding: 0 84px 0 0;
+    padding: 10px  84px 0 0;
 
     &--primary {
       max-width: 324px;
-      padding: 0 84px 0 0;
+      padding: 10px 84px 0 0;
     }
   }
 
   @include vp-767 {
     max-width: 290px;
     min-height: 240px;
-    padding: 0 27px 0 0;
+    padding: 10px 27px 0 0;
 
-    &--primary {
-      max-width: 290px;
+    &:nth-child(odd) {
       min-height: 330px;
     }
   }
@@ -210,6 +226,11 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
+  @include vp-767 {
+    // Нужно чтоб не было скачка при фокусе на кнопки слайдера
+    margin-bottom: 13px;
+  }
 }
 
 .news__card .slider-card__text-decor {

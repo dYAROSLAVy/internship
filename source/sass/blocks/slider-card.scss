@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 12px;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .slider-card__picture-decor {
@@ -137,6 +139,7 @@
 .slider-card__date-wrapper {
   position: relative;
   width: fit-content;
+  max-width: 68%;
   padding: 1px 12.5px 0 0;
   background-color: $color-alabaster;
   border-radius: 0 12px 0 0;
