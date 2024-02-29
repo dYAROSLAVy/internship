@@ -40,7 +40,7 @@ const initNewsSlider = () => {
         },
       },
       320: {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         slidesPerGroup: 2,
         spaceBetween: 20,
         grid: {

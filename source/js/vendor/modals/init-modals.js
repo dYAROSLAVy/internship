@@ -2,16 +2,10 @@ import {Modals} from './modals';
 
 let modals;
 
-// Здесь реализован пример открытия модалки через колбэк закрытия
-// const openModalInCloseCallback = (name, context = this) => {
-//   context._enableScrolling = false;
-//   context._setSettings('default');
-//   modals.open(name);
-// };
-
-// closeCallback() {
-//   openModalInCloseCallback('modal-5');
-// },
+const closeCallback = () => {
+  const form = document.querySelector('#modal-form');
+  window.form.reset(form);
+}
 
 const settings = {
   'default': {
@@ -22,7 +16,7 @@ const settings = {
     focusBack: true,
     eventTimeout: 400,
     openCallback: false,
-    closeCallback: false,
+    closeCallback: closeCallback,
   },
 };
 
@@ -33,6 +27,7 @@ const initModals = () => {
       el.classList.remove('modal--preload');
     }, 100);
   });
+
   modals = new Modals(settings);
   // Используйте в разработке экспортируемую переменную modals, window сделан для бэкэнда
   window.modals = modals;

@@ -12,7 +12,7 @@
   }
 }
 
-.contact__inner {
+.contacts__inner {
   gap: 39px;
 
   @include vp-1439 {
@@ -49,10 +49,24 @@
   }
 }
 
+.contacts__info-wrapper h2 {
+  max-width: 600px;
+  word-wrap: break-word;
+  word-break: break-word;
+
+  @include vp-1439 {
+    max-width: 100%;
+  }
+}
+
 .contacts__info {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
+  word-wrap: break-word;
+  word-break: break-word;
+
 
   @include vp-767 {
     flex-direction: column;

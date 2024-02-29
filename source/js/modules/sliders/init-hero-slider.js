@@ -8,10 +8,10 @@ const initHeroSlider = () => {
     modules: [Pagination, Autoplay, A11y],
     loop: true,
     autoHeight: true,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: true,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },
     pagination: {
       el: '.swiper-slide-active .hero__slider-pagination',
       clickable: true,

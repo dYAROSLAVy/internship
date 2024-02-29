@@ -17,6 +17,7 @@
   grid-template-columns: 43.91% 43.9%;
   gap: 138px;
   width: 91.45%;
+  word-wrap: break-word;
 
   @include vp-1439 {
     display: flex;
@@ -141,4 +142,5 @@
 .grants__info-list li {
   display: flex;
   counter-increment: verse 1;
+  min-width: 0;
 }

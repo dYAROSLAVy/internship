@@ -28,7 +28,6 @@ const initReviewsSlider = () => {
       768: {
         slidesPerView: 'auto',
         spaceBetween: 30,
-        allowTouchMove: true,
         scrollbar: {
           dragSize: 324,
         },

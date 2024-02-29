@@ -57,6 +57,7 @@
 
 .numbered-item p {
   margin: 0;
+  word-break: break-word;
 
   @include vp-1439 {
     line-height: 20px;

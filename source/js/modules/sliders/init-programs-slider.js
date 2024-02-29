@@ -28,13 +28,13 @@ const initProgramsSlider = () => {
       768: {
         slidesPerView: 'auto',
         spaceBetween: 30,
-        allowTouchMove: false,
         scrollbar: {
           dragSize: 324,
         },
       },
       320: {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
         allowTouchMove: true,
       },
     },
