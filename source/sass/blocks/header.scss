@@ -6,10 +6,6 @@
   transition: transform $trans-default;
 }
 
-.header:has(.nav.is-open) {
-  padding-right: 15px;
-}
-
 .header:has(.nav.is-open) .header__logo {
   @include vp-767 {
     transform: scale(0);
